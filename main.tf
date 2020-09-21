@@ -3,8 +3,9 @@ module "eks-jx" {
   vault_user          = var.vault_user
   cluster_name = "jx-eks"
   is_jx2              = false
-  cluster_version     = "1.16"
+  cluster_version     = "1.17"
   enable_key_name = true
+  enable_external_dns = true
   enable_worker_group = false
   enable_logs_storage = true
   enable_reports_storage = true
@@ -16,4 +17,5 @@ module "eks-jx" {
   node_group_disk_size = "35"
   node_machine_type = "t3.medium"
   production_letsencrypt = true
+  volume_size = 35
 }
