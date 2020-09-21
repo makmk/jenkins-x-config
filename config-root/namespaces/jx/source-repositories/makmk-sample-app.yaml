@@ -17,6 +17,6 @@ spec:
   providerName: github
   repo: sample-app
   scheduler:
-    kind: ""
-    name: ""
+    kind: "scheduler.jenkins.io"
+    name: "environment"
   url: https://github.com/makmk/sample-app
