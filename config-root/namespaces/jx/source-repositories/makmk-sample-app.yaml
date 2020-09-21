@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: makmk
+    provider: github
+    repository: sample-app
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: makmk-sample-app
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/makmk/sample-app.git
+  org: makmk
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: sample-app
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/makmk/sample-app
