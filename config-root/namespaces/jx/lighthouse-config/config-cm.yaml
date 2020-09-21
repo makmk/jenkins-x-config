@@ -9,6 +9,10 @@ data:
               required_status_checks:
                 contexts:
                 - promotion-build
+            sample-app:
+              required_status_checks:
+                contexts:
+                - pr-build
       protect-tested-repos: true
     github:
       LinkURL: null
@@ -21,6 +25,12 @@ data:
         - master
         name: promotion
         skip_report: true
+      makmk/sample-app:
+      - agent: tekton
+        branches:
+        - master
+        name: release
+        skip_report: true
     presubmits:
       makmk/jenkins-x-config:
       - agent: tekton
@@ -29,16 +39,24 @@ data:
         name: promotion-build
         rerun_command: /test this
         trigger: (?m)^/test( all| this),?(\s+|$)
+      makmk/sample-app:
+      - agent: tekton
+        always_run: true
+        context: pr-build
+        name: pr-build
+        rerun_command: /test this
+        trigger: (?m)^/test( all| this),?(\s+|$)
     prowjob_namespace: jx
     push_gateway:
       serve_metrics: false
     tide:
       context_options:
         from-branch-protection: true
-        required-if-present-contexts: []
+        required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
         makmk/jenkins-x-config: merge
+        makmk/sample-app: merge
       queries:
       - labels:
         - approved
@@ -50,6 +68,7 @@ data:
         - needs-rebase
         repos:
         - makmk/jenkins-x-config
+        - makmk/sample-app
       - labels:
         - updatebot
         missingLabels:
@@ -60,6 +79,7 @@ data:
         - needs-rebase
         repos:
         - makmk/jenkins-x-config
+        - makmk/sample-app
       target_url: http://deck-jx.52.203.153.26.nip.io
 kind: ConfigMap
 metadata:
