@@ -60,7 +60,7 @@ data:
         - needs-rebase
         repos:
         - makmk/jenkins-x-config
-      target_url: http://deck-jx.
+      target_url: http://deck-jx.52.203.153.26.nip.io
 kind: ConfigMap
 metadata:
   creationTimestamp: null
