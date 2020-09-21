@@ -1,0 +1,7 @@
+metadata:
+  creationTimestamp: null
+spec:
+  groups:
+  - owner: makmk
+    repositories:
+    - name: sample-app
