@@ -7,38 +7,57 @@ buildPacks:
     gitRef: master
     gitURL: https://github.com/jenkins-x/jxr-packs-kubernetes.git
 cluster:
-  clusterName: ""
-  devEnvApprovers:
-  - todo
-  environmentGitOwner: "todo"
+  clusterName: jx-eks
+  environmentGitOwner: todo
   gitKind: github
   gitName: github
   gitServer: https://github.com
   namespace: jx
-  project:  ""
   provider: eks
-  registry: ecr.io
-  zone: ""
+  region: us-east-1
+  registry: 328738327430.dkr.ecr.us-east-1.amazonaws.com
 environments:
-- key: dev
-  owner: ""
-  repository: ""
-- key: staging
-  owner: ""
-  repository: ""
-- key: production
-  owner: ""
-  repository: ""
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  owner: makmk
+  repository: jenkins-x-config
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
 gitops: true
 ingress:
-  domain: ""
+  domain: 52.203.153.26.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
-    production: false
+    production: true
 kaniko: true
+pipelineUser:
+  username: makmk
 repository: nexus
 secretStorage: vault
 storage:
@@ -46,15 +65,22 @@ storage:
     enabled: false
     url: ""
   logs:
-    enabled: false
-    url: ""
+    enabled: true
+    url: s3://logs-jx-eks-20200921030344603200000004
   reports:
-    enabled: false
-    url: ""
+    enabled: true
+    url: s3://reports-jx-eks-20200921030344603800000007
   repository:
-    enabled: false
-    url: ""
-vault: {}
+    enabled: true
+    url: s3://repository-jx-eks-20200921030344603600000006
+vault:
+  aws:
+    dynamoDBRegion: us-east-1
+    dynamoDBTable: vault-unseal-jx-eks-v4WaSPTN
+    kmsKeyId: 8a6891f3-70c5-4ebb-80ee-df092eef4539
+    kmsRegion: us-east-1
+    s3Bucket: vault-unseal-jx-eks-20200921030344603500000005
+    s3Region: us-east-1
 velero:
   schedule: ""
   ttl: ""
