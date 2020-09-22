@@ -80,7 +80,7 @@ data:
         repos:
         - makmk/jenkins-x-config
         - makmk/sample-app
-      target_url: http://deck-jx.
+      target_url: http://deck-jx.54.164.236.169.nip.io
 kind: ConfigMap
 metadata:
   creationTimestamp: null

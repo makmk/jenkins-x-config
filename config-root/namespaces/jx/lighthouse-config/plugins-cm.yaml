@@ -68,10 +68,10 @@ data:
     triggers:
     - repos:
       - makmk/jenkins-x-config
-      trusted_org: todo
+      trusted_org: makmk
     - repos:
       - makmk/sample-app
-      trusted_org: todo
+      trusted_org: makmk
     welcome:
     - message_template: Welcome
 kind: ConfigMap
