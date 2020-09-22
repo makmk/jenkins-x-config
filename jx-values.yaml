@@ -16,7 +16,7 @@ jxRequirements:
     namespace: jx
     provider: eks
     region: us-east-1
-    registry: 233487312884.dkr.ecr.us-east-1.amazonaws.com
+    registry: 624196668280.dkr.ecr.us-east-1.amazonaws.com
   environments:
   - ingress:
       domain: ""
@@ -67,20 +67,20 @@ jxRequirements:
       url: ""
     logs:
       enabled: true
-      url: s3://logs-jx-eks-20200922182948233900000007
+      url: s3://logs-jx-eks-20200922224812929100000003
     reports:
       enabled: true
-      url: s3://reports-jx-eks-20200922182948233400000004
+      url: s3://reports-jx-eks-20200922224812932300000007
     repository:
       enabled: true
-      url: s3://repository-jx-eks-20200922182948233400000005
+      url: s3://repository-jx-eks-20200922224812931300000006
   vault:
     aws:
       dynamoDBRegion: us-east-1
-      dynamoDBTable: vault-unseal-jx-eks-IJEonIeb
-      kmsKeyId: c6780160-951d-4077-848a-52fde2e37949
+      dynamoDBTable: vault-unseal-jx-eks-ZKTbV75p
+      kmsKeyId: 1aae4fd8-d644-40cf-b90c-f8d0b331baac
       kmsRegion: us-east-1
-      s3Bucket: vault-unseal-jx-eks-20200922182948233800000006
+      s3Bucket: vault-unseal-jx-eks-20200922224814970500000008
       s3Region: us-east-1
   velero:
     schedule: ""

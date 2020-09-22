@@ -10,4 +10,4 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
 data:
   kaniko.flags: ""
-  docker.registry: 233487312884.dkr.ecr.us-east-1.amazonaws.com
+  docker.registry: 624196668280.dkr.ecr.us-east-1.amazonaws.com

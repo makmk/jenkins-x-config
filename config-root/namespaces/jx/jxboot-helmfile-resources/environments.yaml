@@ -41,7 +41,7 @@ spec:
     versionStreamRef: "master"
     useGitOps: true
     storageLocations:
-      - bucketUrl: s3://logs-jx-eks-20200922182948233900000007
+      - bucketUrl: s3://logs-jx-eks-20200922224812929100000003
         classifier: logs
-      - bucketUrl: s3://reports-jx-eks-20200922182948233400000004
+      - bucketUrl: s3://reports-jx-eks-20200922224812932300000007
         classifier: reports
