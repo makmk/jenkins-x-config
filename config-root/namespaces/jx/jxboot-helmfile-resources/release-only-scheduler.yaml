@@ -24,7 +24,7 @@ spec:
       skipUnknownContexts: false
     prStatusBaseUrl: ""
     squashLabel: ""
-    targetUrl: http://deck-jx.52.203.153.26.nip.io
+    targetUrl: http://deck-jx.
   plugins:
     entries:
       - approve
@@ -64,6 +64,6 @@ spec:
     ignoreOkToTest: false
     joinOrgUrl: ""
     onlyOrgMembers: false
-    trustedOrg: todo
+    trustedOrg: makmk
   welcome:
     - message_template: Welcome
